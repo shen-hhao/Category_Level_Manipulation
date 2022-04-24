@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Category_Level_Manipulation </title>
+		<meta charset="utf-8" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+        <meta name="viewport" content="width=1000">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-89797207-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+        <meta property="og:url"           content="https://shen-hhao.github.io/Category_Level_Manipulation/" />
+	    <meta property="og:type"          content="website" />
+	    <meta property="og:title"         content="Learning Category-Level Generalizable Object Manipulation Policy via Generative Adversarial Self-Imitation Learning from Demonstrations" />
+	    <meta property="og:description"   content="" />
+	    <meta property="og:image" content="images/teaser.png" />
+
+	</head>
+	<body id="top">
+
+		<!-- Main -->
+			<div id="main" style="padding-bottom:1em; padding-top: 5em; width: 70em; max-width: 70em; margin-left: auto; margin-right: auto;">
+					<section id="four">
+						
+						<h1 style="text-align: center; margin-bottom: 0px;"><font color="4e79a7">Learning Category-Level Generalizable Object Manipulation Policy</font></h1>
+						<h2 style="text-align: center; margin-bottom: 20px;"><font color="4e79a7">via Generative Adversarial Self-Imitation Learning from Demonstrations</font></h2>
+						<h3 style="text-align: center; margin-bottom: 5px;"><font color="4ea9a7">1<sup>st</sup> prize winner of <a href="https://sapien.ucsd.edu/challenges/maniskill2021/">ManiSkill Challenge 2021</a>(no external annotation track)</font></h3>
+						<h3 style="text-align: center; margin-bottom: 10px;"><font color="4ea9a7">ICLR 2022 GPL Workshop</font></h3>
+						
+						<h4 style="text-align: center; margin-bottom: 5px;">
+                            <a href="https://github.com/shen-hhao">Hao Shen</a><sup>*</sup>&nbsp; &nbsp; 
+                            <a href="https://github.com/wkwan7">Weikang Wan</a><sup>*</sup>&nbsp; &nbsp; 
+                            <a href="https://hughw19.github.io/">He Wang</a><sup>†</sup>
+						</h4>
+                        
+                    	<p style="text-align: center;"><span style="font-size: 16px;">
+                            Team: EPIC Lab, Peking University
+                        </p>
+
+						<section>
+							<div class="box alt" style="margin-bottom: 2em;" >
+								<div class="row 50% uniform" style="width: 60%; margin-left: 40%">
+									<div class="2u" style="font-size: 1.0em; text-align: center;">
+									<a href="https://arxiv.org/abs/2203.02107" style="border-bottom: none;">
+									<span style="margin-bottom: 0.5em;">
+									<img src="images/icons/paper.png" height="70px"/>
+									</span>
+									Paper</a>
+									</div>
+									<div class="2u" style="font-size: 1.0em; text-align: center;">
+									<a href="https://github.com/shen-hhao/Category_Level_Manipulation" style="border-bottom: none;">
+									<span style="margin-bottom: 0.5em;">
+									<img src="images/icons/code.png" height="70px"/>
+									</span>
+									Code</a>
+									</div>
+							</div>
+						</section>
+
+						<!--<h3>Video</h3>
+            			<iframe width="784" height="441" src="https://www.youtube.com/embed/EkcCEj7gZGg?autoplay=0&amp;controls=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+
+
+
+						<hr style="margin-top: 2em;">
+						<h3>Abstract</h3>
+						<p style="text-align:left; margin-top: -20px"> &nbsp;&nbsp;&nbsp;&nbsp;Generalizable object manipulation skills are critical for intelligent and multi-functional robots to work in real-world complex scenes. 
+							Despite the recent progress in reinforcement learning, it is still very challenging to learn a generalizable manipulation policy that can handle a category of geometrically diverse articulated objects.
+							In this work, we tackle this category-level object manipulation policy learning problem via imitation learning in a task-agnostic manner, where we assume no handcrafted dense rewards but only a terminal reward.
+							Given this novel and challenging generalizable policy learning problem, we identify several key issues that can fail the previous imitation learning algorithms and hinder the generalization to unseen instances. 
+							We then propose several general but critical techniques, including generative adversarial self-imitation learning from demonstrations, progressive growing of discriminator, and instance-balancing for expert buffer, that accurately pinpoints and tackles these issues and can benefit category-level manipulation policy learning regardless of the tasks.
+							Our experiments on ManiSkill benchmarks demonstrate a remarkable improvement on all tasks and our ablation studies further validate the contribution of each proposed technique.
+						</p>
+
+						
+						<hr style="margin-top: 2em;">
+						<h3>Method Overview</h3>
+						<span class="center"><img src="images/method_1.png" style="width: 70%; margin-left:15%"></span>
+						<p style="text-align:left; width: 100%; margin-left: 0%">
+						<b>Figure 1</b>: <b>Pipeline Overview.</b> On top of Generative Adversarial Imitation Learning, we introduce Category-Level Instance-Balancing (CLIB) Expert Buffer, which both includes expert demonstrations and successful trajectories and maintain a balance between different instances of objects. Besides, we modified the discriminator's structure to make it progressive as training goes.</p>
+						
+						<span class="center"><img src="images/progressive_structure.png" style="width: 90%; margin-left:5%"></span>
+						<p style="text-align:left; width: 100%; margin-left: 0%">
+						<b>Figure 2</b>: <b>The progressive structure of discriminator network.</b> The input contains the point cloud, robot state, and action. The robot state and action are concatenated to a vector in the figure. The output of the network is a scalar ranging from 0 to 1. During training, the latter part of the network progressively grows from max pooling to attention pooling.</p>
+						
+						<hr style="margin-top: 2em;">
+						<h3>Results</h3>
+
+						<h4>Main results and comparison</h4>
+						<span class="center"><img src="images/results/table1.png" width="98%"></span>
+						<p style="text-align: left; width: 100%; margin-left: 0%"><b>Table 1</b>: <b>Main Results on the four tasks of ManiSkill Challenge Benchmark.</b> We evaluated our methods on four tasks via 100 trials
+							with three different random seeds. In Table 1, with <font color="FD7402">Progressive Growing of Discriminator</font>, <font color="FD7402">Self-Imitation Learning from Demonstrations</font> and <font color="FD7402">CLIB Expert Buffer</font>, <font color="7030A0">our method (Method V)</font> outperforms
+							<font color="0070C0">GAIL (Method I)</font> by <b>13%</b> and <b>18%</b> averaged across four tasks on training and validation sets
+						</p>
+
+						<h5>Expert reward decay</h5>
+						<span class="center"><img src="images/results/curve.png" style="width: 70%; margin-left: 15%;"></span>
+						<p style="text-align: left; width: 100%; margin-left: 0%"><b>Figure 3</b>: <b>The expert reward curve during training.</b> The expert reward comes from the discrim-
+							inator. When the expert reward is relatively small, it indicates that the discriminator can easily
+							distinguish between the expert data and the data generated by the policy. Notice that <font color="7030A0">our method (curve V)</font> always achieve the highest value.
+						</p>
+						
+						<h5>Category-Level generalizability of policies</h5>
+						<span class="center"><img src="images/results/tsne1.png" style="width: 35%; margin-left: 12%;"><img src="images/results/tsne2.png" style="width: 35%; margin-left: 6%;"></span>
+						<p style="text-align: left; width: 100%; margin-left: 0%"><b>Figure 4</b>: <b>A t-SNE visual comparison of the feature</b> extracted by the trained discriminator from the initial data in the expert buffer 
+							and the data in the expert buffer at 2&times;10<sup>6</sup> steps for <b>MoveBucket task</b> using our <font color="70AD47">SILFD</font> method. 
+							<b>Left</b>: initial data in the expert buffer. <b>Right</b>: data in the expert buffer at 2&times;10<sup>6</sup> steps which are mainly generated by our own policy during training. Each color represents the data of an instance.
+						</p>
+
+						<hr style="margin-top: 2em;">
+						<h4>Ablation studies</h4>
+						<span class="center"><img src="images/results/table2.png" style="width: 80%; margin-left: 10%;"></span>
+						<p style="text-align: left; width: 100%; margin-left: 0%"><b>Table 2</b>: <b>Comparison of whether to progressively grow the generator</b> 
+							By comparing the method of progressively growing both the generator and the discriminator with the method of only growing the discriminator, 
+							we find that with the growing generator, the method will decrease by <b>17%</b> and <b>15%</b> averaged across four tasks on training and validation sets.
+						</p>
+
+						<h4>Additional experiments with dense reward</h4>
+						<span class="center"><img src="images/results/table3.png" style="width: 80%; margin-left: 10%;"></span>
+						<p style="text-align: left; width: 100%; margin-left: 0%"><b>Table 3</b>: <b>Evaluation of our methods with additional handcrafted dense reward provided by ManiSkill.</b> 
+							We find that our methods with additional dense reward, which ranks the first place on the "no external annotation“ track of ManiSkill Challenge 2021, 
+							can outperform the GAIL+SAC baseline by <b>7%</b> averaged across four tasks on both training and validation sets.
+						</p>
+
+						<hr style="margin-top: 2em;">
+						<div class="row" style="margin-top: 1em">
+							<div class="12u$ 1u$(xsmall)">
+								<h3>Bibtex</h3>
+								<pre style="text-align:left;"><code>@article{shen2022learning,<br />    title={Learning Category-Level Generalizable Object Manipulation Policy via Generative Adversarial Self-Imitation Learning from Demonstrations},<br />    author={Shen, Hao and Wan, Weikang and Wang, He},<br />    journal={arXiv preprint arXiv:2203.02107},<br />    year={2022}<br />}</code></pre>
+							</div>
+						</div>
+
+						<hr style="margin-top: 1em">
+				        <h3>Contact</h3>
+				        <p>If you have any questions, please feel free to contact <a href="https://github.com/shen-hhao">Hao Shen</a> at shenhaosim_at_pku.edu.cn and <a href="https://github.com/wkwan7">Weikang Wan</a> at wwk_at_pku.edu.cn</p>
+						<hr/>
+
+					</section>
+			</div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
