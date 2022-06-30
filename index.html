@@ -20,7 +20,7 @@
         <meta property="og:url"           content="https://shen-hhao.github.io/Category_Level_Manipulation/" />
 	    <meta property="og:type"          content="website" />
 	    <meta property="og:title"         content="Learning Category-Level Generalizable Object Manipulation Policy via Generative Adversarial Self-Imitation Learning from Demonstrations" />
-	    <meta property="og:description"   content="Generalizable object manipulation skills are critical for intelligent and multi-functional robots to work in real-world complex scenes. Despite the recent progress in reinforcement learning, it is still very challenging to learn a generalizable manipulation policy that can handle a category of geometrically diverse articulated objects. In this work, we tackle this category-level object manipulation policy learning problem via imitation learning in a task-agnostic manner, where we assume no handcrafted dense rewards but only a terminal reward. Given this novel and challenging generalizable policy learning problem, we identify several key issues that can fail the previous imitation learning algorithms and hinder the generalization to unseen instances. We then propose several general but critical techniques, including generative adversarial self-imitation learning from demonstrations, progressive growing of discriminator, and instance-balancing for expert buffer, that accurately pinpoints and tackles these issues and can benefit category-level manipulation policy learning regardless of the tasks. Our experiments on ManiSkill benchmarks demonstrate a remarkable improvement on all tasks and our ablation studies further validate the contribution of each proposed technique." />
+	    <meta property="og:description"   content="" />
 	    <meta property="og:image" content="images/teaser.png" />
 
 	</head>
@@ -34,7 +34,9 @@
 						<h2 style="text-align: center; margin-bottom: 20px;"><font color="4e79a7">via Generative Adversarial Self-Imitation Learning from Demonstrations</font></h2>
 						<h3 style="text-align: center; margin-bottom: 5px;"><font color="4ea9a7">1<sup>st</sup> prize winner of <a href="https://sapien.ucsd.edu/challenges/maniskill2021/">ManiSkill Challenge 2021</a>(no external annotation track)</font></h3>
 						<h3 style="text-align: center; margin-bottom: 10px;"><font color="4ea9a7">ICLR 2022 GPL Workshop</font></h3>
-						
+						<h3 style="text-align: center; margin-bottom: 10px;"><font color="4ea9a7">Robotics and Automation Letters (RA-L), 2022.</font></h3>
+						<h3 style="text-align: center; margin-bottom: 10px;"><font color="4ea9a7">International Conference on Intelligent Robots and Systems (IROS), 2022.</font></h3>
+
 						<h4 style="text-align: center; margin-bottom: 5px;">
                             <a href="https://github.com/shen-hhao">Hao Shen</a><sup>*</sup>&nbsp; &nbsp; 
                             <a href="https://github.com/wkwan7">Weikang Wan</a><sup>*</sup>&nbsp; &nbsp; 
@@ -91,6 +93,12 @@
 						<p style="text-align:left; width: 100%; margin-left: 0%">
 						<b>Figure 2</b>: <b>The progressive structure of discriminator network.</b> The input contains the point cloud, robot state, and action. The robot state and action are concatenated to a vector in the figure. The output of the network is a scalar ranging from 0 to 1. During training, the latter part of the network progressively grows from max pooling to attention pooling.</p>
 						
+						<span class="center"><img src="images/algorithm.png" style="width: 60%; margin-left:20%"></span>
+						<p style="text-align:left; width: 100%; margin-left: 0%">
+						<b>Algorithm 1</b>: <b>The overall combined algorithm of our work.</b> </p>
+						
+
+
 						<hr style="margin-top: 2em;">
 						<h3>Results</h3>
 
@@ -140,7 +148,7 @@
 
 						<hr style="margin-top: 1em">
 				        <h3>Contact</h3>
-				        <p>If you have any questions, please feel free to contact <a href="https://github.com/shen-hhao">Hao Shen</a> at shenhaosim_at_pku.edu.cn, <a href="https://github.com/wkwan7">Weikang Wan</a> at wwk_at_pku.edu.cn and <a href="https://hughw19.github.io/">He Wang</a> at hewang_at_pku.edu.cn</p>
+				        <p>If you have any questions, please feel free to contact <a href="https://github.com/shen-hhao">Hao Shen</a> at shenhaosim_at_pku.edu.cn and <a href="https://github.com/wkwan7">Weikang Wan</a> at wwk_at_pku.edu.cn</p>
 						<hr/>
 
 					</section>
